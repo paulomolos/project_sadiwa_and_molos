@@ -157,7 +157,7 @@ int main (){
                 system("pause");
                 break;
 
-            case 19: counting_sundays();
+            case 19: counting_days();
 
                 pro.special_pytho_triplet();
                 system("pause");
