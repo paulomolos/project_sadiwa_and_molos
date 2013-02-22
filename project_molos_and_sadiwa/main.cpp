@@ -15,6 +15,16 @@ const string PROBLEMS[]={
     "Largest Product in Series",
     "Special Phythagorean Triplet",
     "Summation of Primes",
+    "largest Product in a grid",
+    "Highly divisible triangular number",
+    "Large sum",
+    "Longest collatz sequence",
+    "Diophantine Reciprocals",
+    " Power digit sum "
+    "Number letter counts",
+    " Maximum path sum I ",
+    "Counting Sundays",
+    "Factorial Digit Sum"
     "Exit"
 };
 
@@ -95,6 +105,65 @@ int main (){
                 break;
 
             case 10:
+
+                pro.summation_of_primes();
+                system("pause");
+                break;
+                
+                  case 11:
+
+                pro.largest_product_grid();
+                system("pause");
+                break;
+
+            case 12:
+                pro.divisible_triangular_number();
+                system("pause");
+                break;
+
+            case 13:
+
+                pro.largest_sum();
+                system("pause");
+                break;
+
+            case 14:
+
+                pro.longest_collatz_sequence();
+                system("pause");
+                break;
+
+            case 15:
+
+                pro. diophantine_reciprocals_a();
+                system("pause");
+                break;
+
+            case 16:
+
+                pro.power_digit_sum();
+                system("pause");
+                break;
+
+            case 17:
+
+                pro.number_letter_counts();
+                system("pause");
+                break;
+
+            case 18:
+
+                pro.max_path_sum_one();
+                system("pause");
+                break;
+
+            case 19: counting_sundays();
+
+                pro.special_pytho_triplet();
+                system("pause");
+                break;
+
+            case 20:
 
                 pro.summation_of_primes();
                 system("pause");
