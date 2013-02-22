@@ -165,7 +165,7 @@ int main (){
 
             case 20:
 
-                pro.summation_of_primes();
+                pro. factorial_digit_sum()
                 system("pause");
                 break;
 
