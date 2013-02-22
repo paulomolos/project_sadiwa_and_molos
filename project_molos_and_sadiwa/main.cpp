@@ -1,7 +1,7 @@
 #include <iostream>
 #include <string>
 #include <cstdlib>
-#include "project.h"
+#include "include/project.h"
 
 using namespace std;
 const string PROBLEMS[]={
@@ -15,21 +15,20 @@ const string PROBLEMS[]={
     "Largest Product in Series",
     "Special Phythagorean Triplet",
     "Summation of Primes",
-    "largest Product in a grid",
-    "Highly divisible triangular number",
-    "Large sum",
-    "Longest collatz sequence",
-    "Diophantine Reciprocals",
-    " Power digit sum "
-    "Number letter counts",
-    " Maximum path sum I ",
+    "Largest Product Grid",
+    "Divisible Triangular Number",
+    "Largest Sum",
+    "Largest Collatz Sequence",
+    "Diophantine Reciprocals A",
+    "Power Digit Sum",
+    "Number Letter Counts",
+    "Maximum Path sum I",
     "Counting Sundays",
-    "Factorial Digit Sum"
+    "Factorial Digit Sum",
     "Exit"
 };
 
-const int NUM_PROBLEMS = 10;
-
+const int NUM_PROBLEMS = 20;
 const int EXIT = NUM_PROBLEMS + 1;
 int main (){
     project pro;
@@ -109,9 +108,8 @@ int main (){
                 pro.summation_of_primes();
                 system("pause");
                 break;
-                
-                  case 11:
 
+            case 11:
                 pro.largest_product_grid();
                 system("pause");
                 break;
@@ -122,50 +120,42 @@ int main (){
                 break;
 
             case 13:
-
                 pro.largest_sum();
                 system("pause");
                 break;
 
             case 14:
-
                 pro.longest_collatz_sequence();
                 system("pause");
                 break;
 
             case 15:
-
-                pro. diophantine_reciprocals_a();
+                pro.diophantine_reciprocals_a();
                 system("pause");
                 break;
 
             case 16:
-
                 pro.power_digit_sum();
                 system("pause");
                 break;
 
             case 17:
-
                 pro.number_letter_counts();
                 system("pause");
                 break;
 
             case 18:
-
                 pro.max_path_sum_one();
                 system("pause");
                 break;
 
-            case 19: counting_days();
-
-                pro.special_pytho_triplet();
+            case 19:
+                pro.counting_sundays();
                 system("pause");
                 break;
 
             case 20:
-
-                pro. factorial_digit_sum()
+                pro.factorial_digit_sum();
                 system("pause");
                 break;
 

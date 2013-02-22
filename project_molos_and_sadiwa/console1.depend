@@ -1,0 +1,21 @@
+# depslib dependency file v1.0
+1361543653 source:/home/flepti/console1/main.cpp
+	<iostream>
+	<string>
+	<cstdlib>
+	"include/project.h"
+
+1361541550 /home/flepti/console1/include/project.h
+
+1361547088 source:/home/flepti/console1/src/project.cpp
+	<iostream>
+	<string>
+	<sstream>
+	<cstdlib>
+	<fstream>
+	<vector>
+	<cmath>
+	<numeric>
+	<string.h>
+	"../include/project.h"
+
