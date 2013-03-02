@@ -530,7 +530,37 @@ void project::max_path_sum_one()
 
 void project::counting_sundays()
 {
-    cout<<"Unable to meet program requirements.."<<endl;
+   
+    int sundays = 0;
+    int  days_in_month;
+    int days_passed = 1;
+
+    for (int a = 1901; a < 2000; a++) {
+        for (int b = 1; b <= 12;b++)
+            {
+            if (b == 4 ||b == 6 || b == 9 || b == 11)
+                {
+                days_in_month = 30;
+                } else if (b == 2)
+                {
+                if (a % 400 == 0 || (a % 4 == 0 && a % 100 != 0))
+                {
+                    days_in_month = 29;
+                } else {
+                    days_in_month = 28;
+                }
+                } else {
+                days_in_month = 31;
+                   }
+            if (days_passed % 7 == 0)
+                {
+                sundays++;
+                }
+            days_passed += days_in_month;
+            }
+    }
+
+    cout << "From 1 Jan 1901 to 31 Dec 2000 have "<<sundays <<"  sundays"<< endl;
 }
 
 void project::factorial_digit_sum()
