@@ -537,3 +537,73 @@ void project::factorial_digit_sum()
 {
     cout<<"Unable to meet program requirements.."<<endl;
 }
+void project::name_scores()
+{
+	string line;
+    string numbers[5163];
+    char letters[26]={ 'A','B','C', 'D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z'};
+    string x;
+    int y=0;
+    int total=0;
+    long total_2=0;
+
+
+    ifstream myfile;
+    myfile.open("names.txt");
+
+    while(myfile.good()){
+          getline(myfile,line,',');
+         x=line;
+        numbers[y]=x;
+        y++;
+      }
+
+
+    for(int a=0;a<5163;a++){
+        for(int i = 1; i <5163; i++){
+
+        if(numbers[i] > numbers[a]){
+            string z=numbers[i];
+            numbers[i]=numbers[a];
+            numbers[a]=z;
+
+        }
+
+    }
+
+}
+
+for(int b=0;b<5163;b++)
+    {
+    int limit=numbers[b].length();
+    string temp="";
+       for(int c=0;c<limit;c++)
+       {
+           if(numbers[b].at(c)=='"')
+            continue;
+           temp+=numbers[b].at (c);
+       }
+       numbers[b]=temp;
+}
+for(int d=0;d<5163;d++)
+    {
+    int limit_2=numbers[d].length();
+    int summation=0;
+     for(int e=0;e<limit_2;e++)
+        {
+
+        for(int f=0;f<26;f++)
+        {
+            if(numbers[d].at(e)==letters[f])
+            {
+             summation+=f+1;
+            }
+        }
+    }
+    total=summation*(d+1);
+    total_2+=total;
+
+}
+
+cout<<"the total score of the names is:  "<<total_2<<endl;
+}
