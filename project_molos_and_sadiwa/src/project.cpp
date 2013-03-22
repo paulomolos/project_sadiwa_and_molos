@@ -12,13 +12,20 @@
 #define silver_swan 100
 #define qwerty 50
 #define ewan 5
+#define staticattic 1000001
+#define mx 1001
+#include <cstdio>
+#include <vector>
+#include <algorithm>
+#include <math.h>
+
 
 
 using namespace std;
 
 project::project()
 {
-    //ctor
+
 }
 void project::multiples_3_and_5()
 {
@@ -624,7 +631,7 @@ void project::max_path_sum_one()
 
 void project::counting_sundays()
 {
-   
+
     int sundays = 0;
     int  days_in_month;
     int days_passed = 1;
@@ -730,4 +737,174 @@ for(int d=0;d<5163;d++)
 }
 
 cout<<"the total score of the names is:  "<<total_2<<endl;
+
+}
+
+void addNum(vector<int> & vect1, vector<int> & vect2);
+void carryNums(vector<int> & vect);
+bool getNumDigits(vector<int> & vect);
+void print(vector<int> & vect);
+
+
+const int DIGITS = 1000;
+static int COUNT = 1;
+
+
+void addNum(vector<int> & vect1, vector<int> & vect2)
+{
+    if(vect1.size() < vect2.size())
+    {
+        vect1.push_back(0);
+    }
+    else if ( vect1.size() > vect2.size() )
+    {
+        vect2.push_back(0);
+    }
+    for(unsigned int i = 0; i < vect1.size(); i++)
+    {
+        vect1[i] += vect2[i];
+    }
+    carryNums(vect1);
+
+
+}
+void carryNums(vector<int> & vect)
+{
+    int carry = 0;
+    for(int unsigned i = 0; i < vect.size(); i++)
+    {
+        if( 9 < vect[i] )
+        {
+           if( i+1 == vect.size() )
+           {
+              vect.push_back(vect[i]/10);
+              vect[i] = vect[i]%10;
+           }
+           else
+           {
+               carry   = vect[i]/10;
+               vect[i] = vect[i]%10;
+               vect[i+1] += carry;
+           }
+        }
+    }
+}
+
+
+bool getNumDigits(vector<int> & vect1)
+{
+    bool isNum = false;
+    if(DIGITS == vect1.size())
+    {
+        cout << "\nThis is the " << COUNT << "th term.\n";
+        print(vect1);
+        return true;
+    }
+    else
+        return false;
+}
+
+
+void print(vector<int> & vect)
+{
+    for(int i = vect.size() - 1; i > -1; i--)
+    {
+        cout << vect[i];
+    }
+    cout << endl;
+}
+
+
+void project :: first_1000_digit_fibonacci()
+{
+    bool isNum = false;
+
+
+    vector<int> term1;
+    vector<int> term2;
+    term1.push_back(1);
+    term2.push_back(0);
+    int COUNT;
+    for(int i = 0; ; i++)
+    {
+        COUNT++;
+        addNum(term2, term1);
+        isNum = getNumDigits(term2);
+        if(isNum) break;
+        COUNT++;
+        addNum(term1, term2);
+        isNum = getNumDigits(term1);
+        if(isNum) break;
+    }
+}
+
+
+bool p[staticattic];
+long primeTable[78500],nPrime = 0;
+
+
+void boyd(){
+ int i,j;
+
+
+ p[0] = p[1] = true;
+ for( i = 4; i <= staticattic; i += 2 )
+  p[i] = true;
+
+
+ primeTable[nPrime++] = 2;
+
+
+ for( i = 3; i <= mx; i += 2 ){
+  if(!p[i]){
+   primeTable[nPrime++] = i;
+   for( j = i * i; j <= staticattic; j += i )
+    p[j] = true;
+  }
+ }
+
+
+ for( i = mx + 2; i <= staticattic; i += 2 ){
+  if(!p[i]){
+   primeTable[nPrime++] = i;
+  }
+ }
+}
+
+
+bool isTruncatable(long n){
+ long pow = 10;
+
+
+ while( pow < n){
+  if(p[n%pow] || p[n/pow])
+   return false;
+  pow *= 10;
+ }
+
+
+ return true;
+}
+void project :: truncable_primes()
+{
+ long i,ans = 0;
+
+
+ boyd();
+
+
+ cout << "The 11 truncatable primes are: \n" ;
+
+
+ for( i = 4; i < nPrime; i++){
+  if( isTruncatable(primeTable[i]) ){
+   ans += primeTable[i];
+cout << primeTable[i] << endl;
+  }
+ }
+
+
+ cout << "The sum of the 11 truncatable numbers is " << ans << endl;
+
+
 }
